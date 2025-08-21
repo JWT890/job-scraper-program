@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="refresh" content="1000">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Job Listings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+        .job {
+            background: #fff;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        }
+        .job h3 {
+            margin: 0;
+        }
+        .job a {
+            text-decoration: none;
+            color: #1a0dab;
+        }
+        .job p {
+            margin: 5px 0;
+        }
+    </style>
+    </head>
+    <body>
+        <h1>Job Alerts</h1>
+        {% for job in jobs %}
+            <div class="job">
+                <h3>
+                    <a href="{{ job.link }}" target="_blank">{{ job.title }}</a>
+                </h3>
+                <p>
+                    <strong>Company:</strong>
+                    {{ job.company }}
+                </p>
+                <p>
+                    <strong>Location</strong>
+                    {{ job.location }}
+                </p>
+            </div>
+        {% endfor %}
+    </body>
+</html>

@@ -13,10 +13,8 @@ RSS_URLS = {
     "Blue Origin": "www.indeed.com/jobs?q=blue+origin&l=huntsville%2C+al&from=subwaywebapp&radius=25"
 }
 
-def get_jobs(rss_url):
-    """Fetch jobs from a given RSS URL"""
-    feed = feedparser.parse(rss_url)
-    return [entry.title for entry in feed.entries]
+def get_jobs(RSS_URLS):
+    global jobs_listings
 
 def update_job_listings():
 
